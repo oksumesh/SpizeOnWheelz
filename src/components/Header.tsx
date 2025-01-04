@@ -9,7 +9,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <NavLink to="/" className="flex items-center space-x-2">
             <UtensilsCrossed className="h-8 w-8 text-indigo-600" />
-            <span className="text-xl font-semibold text-gray-900">Spice On Wheelsz</span>
+            <span className="text-xl font-semibold text-gray-900">Spice On Wheelz</span>
           </NavLink>
           
           <nav className="flex space-x-8">

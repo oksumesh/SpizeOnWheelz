@@ -16,10 +16,10 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-3xl font-bold mb-6">About Fusion Wheels</h2>
+            <h2 className="text-3xl font-bold mb-6">About Spice On Wheelz</h2>
             <div className="prose prose-lg">
               <p>
-                Founded in 2020, Fusion Wheels brings the diverse flavors of India
+                Founded in 2020, Spice On Wheelz brings the diverse flavors of India
                 right to your neighborhood. Our food truck combines traditional
                 recipes with modern culinary techniques to create an unforgettable
                 dining experience.
@@ -32,11 +32,14 @@ export default function About() {
             </div>
 
             <div className="mt-12 space-y-6">
-              <div className="flex items-center space-x-4">
-                <MapPin className="h-6 w-6 text-indigo-600" />
+              <div className="flex items-start space-x-4">
+                <MapPin className="h-6 w-6 text-indigo-600 mt-1" />
                 <div>
-                  <h3 className="font-medium">Location</h3>
-                  <p className="text-gray-600">123 Foodie Street, Culinary Park</p>
+                  <h3 className="font-medium">Locations</h3>
+                  <div className="text-gray-600 space-y-2">
+                    <p>45 Garfield Rd E, Riverstone NSW 2765</p>
+                    <p>103 Railway Terrace, Schofields NSW 2762</p>
+                  </div>
                 </div>
               </div>
 
@@ -45,8 +48,8 @@ export default function About() {
                 <div>
                   <h3 className="font-medium">Hours</h3>
                   <p className="text-gray-600">
-                    Mon-Sat: 11:00 AM - 9:00 PM<br />
-                    Sun: 12:00 PM - 8:00 PM
+                    Monday: Closed<br />
+                    Tuesday-Sunday: 12:00 PM - 10:00 PM
                   </p>
                 </div>
               </div>
@@ -55,7 +58,10 @@ export default function About() {
                 <Phone className="h-6 w-6 text-indigo-600" />
                 <div>
                   <h3 className="font-medium">Phone</h3>
-                  <p className="text-gray-600">(555) 123-4567</p>
+                  <div className="text-gray-600 space-y-1">
+                    <p>Riverstone: 0481 222 229</p>
+                    <p>Schofields: 0466 443 377</p>
+                  </div>
                 </div>
               </div>
 
@@ -63,7 +69,7 @@ export default function About() {
                 <Mail className="h-6 w-6 text-indigo-600" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-gray-600">hello@fusionwheels.com</p>
+                  <p className="text-gray-600">Spiceonwheelz@gmail.com</p>
                 </div>
               </div>
             </div>

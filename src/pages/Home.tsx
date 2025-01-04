@@ -33,16 +33,16 @@ export default function Home() {
   return (
     <div className="pt-16">
       <CuisineSection
-        title="North Indian Delicacies"
-        description="Experience the rich, aromatic flavors of North India"
+        title="Riverstone Delicacies"
+        description="Experience the rich, aromatic flavors of Riverstone"
         backgroundImage="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070"
         items={northIndianItems}
         type="north"
       />
       
       <CuisineSection
-        title="South Indian Specialties"
-        description="Discover the authentic tastes of South India"
+        title="Schofield Specialties"
+        description="Discover the authentic tastes of Schofield"
         backgroundImage="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=2070"
         items={southIndianItems}
         type="south"
