@@ -47,9 +47,9 @@ export default function MenuGrid({ items }: MenuGridProps) {
                 {item.isVegetarian ? 'Veg' : 'Non-veg'}
               </span>
             </div>
-            <button className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-colors">
+            {/* <button className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-colors">
               Add to Cart
-            </button>
+            </button> */}
           </div>
         </div>
       ))}

@@ -31,22 +31,28 @@ export default function Home() {
   const southIndianItems = MENU_ITEMS.filter(item => item.category === 'south');
 
   return (
-    <div className="pt-16">
-      <CuisineSection
-        title="Riverstone Delicacies"
-        description="Experience the rich, aromatic flavors of Riverstone"
-        backgroundImage="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070"
-        items={northIndianItems}
-        type="north"
-      />
-      
-      <CuisineSection
-        title="Schofield Specialties"
-        description="Discover the authentic tastes of Schofield"
-        backgroundImage="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=2070"
-        items={southIndianItems}
-        type="south"
-      />
+    <div className="h-screen overflow-hidden pt-16">
+      <div className="flex flex-col md:flex-row h-[calc(100vh-64px)]">
+        <div className="flex-1 h-[50vh] md:h-full">
+          <CuisineSection
+            title="Riverstone Delicacies"
+            description="Experience the rich, aromatic flavors of Riverstone"
+            backgroundImage="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070"
+            items={northIndianItems}
+            type="north"
+          />
+        </div>
+        
+        <div className="flex-1 h-[50vh] md:h-full">
+          <CuisineSection
+            title="Schofield Specialties"
+            description="Discover the authentic tastes of Schofield"
+            backgroundImage="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=2070"
+            items={southIndianItems}
+            type="south"
+          />
+        </div>
+      </div>
     </div>
   );
 }

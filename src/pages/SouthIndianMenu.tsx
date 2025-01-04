@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuGrid from '../components/MenuGrid';
 import { MenuItem } from '../types/menu';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function SouthIndianMenu() {
-  const items = MENU_ITEMS.filter(item => item.category === 'south');
+  const [searchQuery, setSearchQuery] = useState('');
+  const allItems = MENU_ITEMS.filter(item => item.category === 'south');
+  
+  const filteredItems = allItems.filter(item => 
+    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="pt-16">
@@ -22,14 +28,30 @@ export default function SouthIndianMenu() {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <Link 
-          to="/" 
-          className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-8"
-        >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Home
-        </Link>
-        <MenuGrid items={items} />
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+          <Link 
+            to="/" 
+            className="inline-flex items-center text-indigo-600 hover:text-indigo-700"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Home
+          </Link>
+
+          <div className="relative w-full sm:w-96">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-400" />
+            </div>
+            <input
+              type="search"
+              placeholder="Search dishes..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+        </div>
+
+        <MenuGrid items={filteredItems} />
       </div>
     </div>
   );
@@ -46,5 +68,84 @@ const MENU_ITEMS: MenuItem[] = [
     image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=800',
     category: 'south'
   },
-  // Add more South Indian items
+  {
+    id: 'S1',
+    name: 'Idli Sambar',
+    description: 'Steamed rice cakes served with lentil soup and chutneys',
+    price: 9.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  },
+  {
+    id: 'S2',
+    name: 'Vada',
+    description: 'Crispy lentil doughnuts served with coconut chutney',
+    price: 8.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  },
+  {
+    id: 'S3',
+    name: 'Uttapam',
+    description: 'Thick rice pancake topped with onions, tomatoes, and chilies',
+    price: 10.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  },
+  {
+    id: 'S4',
+    name: 'Hyderabadi Biryani',
+    description: 'Fragrant rice layered with spiced meat and aromatics',
+    price: 16.99,
+    spiceLevel: 3,
+    isVegetarian: false,
+    image: 'https://images.unsplash.com/photo-1642821373181-696a54913e93?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  },
+  {
+    id: 'S5',
+    name: 'Rasam',
+    description: 'Traditional spiced tamarind soup',
+    price: 7.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  },
+  {
+    id: 'S6',
+    name: 'Appam with Stew',
+    description: 'Lacy rice hoppers served with vegetable or chicken stew',
+    price: 13.99,
+    spiceLevel: 1,
+    isVegetarian: false,
+    image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  },
+  {
+    id: 'S7',
+    name: 'Mysore Pak',
+    description: 'Traditional ghee-based sweet made with gram flour',
+    price: 6.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  },
+  {
+    id: 'S8',
+    name: 'Filter Coffee',
+    description: 'Traditional South Indian coffee with chicory',
+    price: 4.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    image: 'https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&q=80&w=800',
+    category: 'south'
+  }
 ];
