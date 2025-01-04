@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className="pt-16">
       <CuisineSection
-        title="Riverstone Delicacies"
+        title="Riverstone Delicacies---"
         description="Experience the rich, aromatic flavors of Riverstone"
         backgroundImage="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070"
         items={northIndianItems}
