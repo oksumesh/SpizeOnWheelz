@@ -25,32 +25,30 @@ export default function CuisineSection({
       style={{ backgroundImage: `url(${backgroundImage})` }}
       onClick={() => navigate(`/menu/${type}`)}
     >
-      {/* Darker gradient overlay for better text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 group-hover:opacity-75 transition-opacity duration-500" />
+      {/* Darker overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
       
-      {/* Glass effect container */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="backdrop-blur-sm bg-black/20 px-12 py-8 rounded-2xl transform transition-all duration-500 group-hover:scale-105">
-          <div className="text-center space-y-6">
-            <h2 className="text-5xl font-bold text-white tracking-tight whitespace-nowrap">
-              {title}
-            </h2>
-            <p className="text-xl text-gray-100 font-light whitespace-nowrap">
-              {description}
-            </p>
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg group-hover:bg-white/20 transition-all duration-500">
-              <ChevronRight className="w-6 h-6 text-white" />
-            </div>
+      {/* Content container */}
+      <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-16">
+        <div className="transform transition-all duration-500 group-hover:translate-x-4">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-6">
+            {title}
+          </h2>
+          <p className="text-xl md:text-2xl lg:text-3xl text-white font-light max-w-2xl">
+            {description}
+          </p>
+          
+          <div className="mt-12 flex items-center text-white">
+            <span className="text-base md:text-lg uppercase tracking-wider mr-4 font-medium">
+              Explore Menu
+            </span>
+            <ChevronRight className="w-6 h-6 md:w-8 md:h-8 transform group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
       </div>
 
-      {/* Subtle vignette effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent to-black/30 pointer-events-none" />
-      
-      {/* Modern corner accent */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent opacity-50" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-white/10 to-transparent opacity-50" />
+      {/* Enhanced gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none" />
     </div>
   );
 }
