@@ -37,8 +37,26 @@ export default function About() {
                 <div>
                   <h3 className="font-medium">Locations</h3>
                   <div className="text-gray-600 space-y-2">
-                    <p>45 Garfield Rd E, Riverstone NSW 2765</p>
-                    <p>103 Railway Terrace, Schofields NSW 2762</p>
+                    <p>
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=45+Garfield+Rd+E,+Riverstone+NSW+2765" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-indigo-600 hover:underline transition-colors"
+                      >
+                        45 Garfield Rd E, Riverstone NSW 2765
+                      </a>
+                    </p>
+                    <p>
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=103+Railway+Terrace,+Schofields+NSW+2762" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-indigo-600 hover:underline transition-colors"
+                      >
+                        103 Railway Terrace, Schofields NSW 2762
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -59,8 +77,22 @@ export default function About() {
                 <div>
                   <h3 className="font-medium">Phone</h3>
                   <div className="text-gray-600 space-y-1">
-                    <p>Riverstone: 0481 222 229</p>
-                    <p>Schofields: 0466 443 377</p>
+                    <p>
+                      <a 
+                        href="tel:0481222229" 
+                        className="hover:text-indigo-600 hover:underline transition-colors"
+                      >
+                        Riverstone: 0481 222 229
+                      </a>
+                    </p>
+                    <p>
+                      <a 
+                        href="tel:0466443377" 
+                        className="hover:text-indigo-600 hover:underline transition-colors"
+                      >
+                        Schofields: 0466 443 377
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -69,33 +101,54 @@ export default function About() {
                 <Mail className="h-6 w-6 text-indigo-600" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-gray-600">Spiceonwheelz@gmail.com</p>
+                  <p className="text-gray-600">
+                    <a 
+                      href="mailto:Spiceonwheelz@gmail.com" 
+                      className="hover:text-indigo-600 hover:underline transition-colors"
+                    >
+                      spiceonwheelz@gmail.com
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 flex space-x-4">
-              <a href="https://www.instagram.com/spiceonwheelz/" className="text-gray-400 hover:text-indigo-600">
+              <a 
+                href="https://www.instagram.com/spiceonwheelz/" 
+                className="text-[#E4405F]"
+              >
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="https://www.facebook.com/spiceonwheelz" className="text-gray-400 hover:text-indigo-600">
+              <a 
+                href="https://www.facebook.com/spiceonwheelz" 
+                className="text-[#1877F2]"
+              >
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="https://x.com/spiceonwheelz" className="text-gray-400 hover:text-indigo-600">
+              <a 
+                href="https://x.com/spiceonwheelz" 
+                className="text-black"
+              >
                 <Twitter className="h-6 w-6" />
               </a>
             </div>
           </div>
 
           <div className="space-y-8">
-            <img
-              src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=2070"
-              alt="Our Food Truck"
-              className="rounded-lg shadow-lg w-full h-64 object-cover"
-            />
             <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.2922926156744947!3d48.858370079287466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1647894687158!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.5377974862893!2d150.8581563!3d-33.679769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129c7c89714fdb%3A0x8e66c9f1d8498910!2s45%20Garfield%20Rd%20E%2C%20Riverstone%20NSW%202765%2C%20Australia!5e0!3m2!1sen!2sus!4v1647894687158!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.0435878681387!2d150.87238!3d-33.690375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129c05c7f8be8d%3A0x7f5e4b9c8eb7d9f0!2s103%20Railway%20Terrace%2C%20Schofields%20NSW%202762%2C%20Australia!5e0!3m2!1sen!2sus!4v1647894687158!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
