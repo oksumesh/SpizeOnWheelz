@@ -1,13 +1,33 @@
 import React from 'react';
-import { Search, SlidersHorizontal } from 'lucide-react';
-import { FilterOptions } from '../types/menu';
+import { Search, ChevronDown } from 'lucide-react';
 
 interface FilterBarProps {
-  filters: FilterOptions;
-  onFilterChange: (filters: FilterOptions) => void;
+  onSearch: (query: string) => void;
+  onDietaryToggle: (type: 'all' | 'veg' | 'non-veg') => void;
+  onCourseFilter: (course: string) => void;
+  searchQuery: string;
+  dietaryType: 'all' | 'veg' | 'non-veg';
+  selectedCourse: string;
 }
 
-export default function FilterBar({ filters, onFilterChange }: FilterBarProps) {
+const FOOD_COURSES = [
+  'All Courses',
+  'Starter',
+  'Main Course',
+  'Bread',
+  'Rice',
+  'Dessert',
+  'Beverages'
+];
+
+export default function FilterBar({ 
+  onSearch, 
+  onDietaryToggle, 
+  onCourseFilter,
+  searchQuery, 
+  dietaryType,
+  selectedCourse 
+}: FilterBarProps) {
   return (
     <div className="bg-white shadow-sm border-b sticky top-16 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -18,52 +38,62 @@ export default function FilterBar({ filters, onFilterChange }: FilterBarProps) {
               <input
                 type="text"
                 placeholder="Search dishes..."
+                value={searchQuery}
+                onChange={(e) => onSearch(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                value={filters.search}
-                onChange={(e) =>
-                  onFilterChange({ ...filters, search: e.target.value })
-                }
               />
             </div>
           </div>
 
-          <select
-            className="border rounded-md px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-            value={filters.dietary}
-            onChange={(e) =>
-              onFilterChange({
-                ...filters,
-                dietary: e.target.value as FilterOptions['dietary'],
-              })
-            }
-          >
-            <option value="all">All</option>
-            <option value="veg">Vegetarian</option>
-            <option value="non-veg">Non-vegetarian</option>
-          </select>
+          <div className="flex items-center gap-2">
+            <div className="flex rounded-lg overflow-hidden border border-gray-300">
+              <button
+                onClick={() => onDietaryToggle('all')}
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  dietaryType === 'all'
+                    ? 'bg-indigo-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                All
+              </button>
+              <button
+                onClick={() => onDietaryToggle('veg')}
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  dietaryType === 'veg'
+                    ? 'bg-green-500 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                Veg
+              </button>
+              <button
+                onClick={() => onDietaryToggle('non-veg')}
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  dietaryType === 'non-veg'
+                    ? 'bg-red-500 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                Non-Veg
+              </button>
+            </div>
 
-          <select
-            className="border rounded-md px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-            value={filters.spiceLevel || ''}
-            onChange={(e) =>
-              onFilterChange({
-                ...filters,
-                spiceLevel: e.target.value ? Number(e.target.value) : null,
-              })
-            }
-          >
-            <option value="">Any Spice Level</option>
-            <option value="1">Mild</option>
-            <option value="2">Medium</option>
-            <option value="3">Hot</option>
-          </select>
-
-          <button
-            className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            <SlidersHorizontal className="h-4 w-4 mr-2" />
-            More Filters
-          </button>
+            <div className="relative">
+              <select
+                value={selectedCourse}
+                onChange={(e) => onCourseFilter(e.target.value)}
+                className="appearance-none bg-white border border-gray-300 rounded-md pl-4 pr-10 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                {FOOD_COURSES.map((course) => (
+                  <option key={course} value={course === 'All Courses' ? 'all' : course}>
+                    {course}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

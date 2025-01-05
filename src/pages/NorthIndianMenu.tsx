@@ -3,6 +3,7 @@ import MenuGrid from '../components/MenuGrid';
 import { MenuItem } from '../types/menu';
 import { ArrowLeft, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import FilterBar from '../components/FilterBar';
 
 interface MenuPageProps {
   items: MenuItem[];
@@ -12,12 +13,24 @@ interface MenuPageProps {
 
 export default function NorthIndianMenu() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [dietaryType, setDietaryType] = useState<'all' | 'veg' | 'non-veg'>('all');
+  const [selectedCourse, setSelectedCourse] = useState('all');
+  
   const allItems = MENU_ITEMS.filter(item => item.category === 'north');
   
-  const filteredItems = allItems.filter(item => 
-    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredItems = allItems.filter(item => {
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesDietary = dietaryType === 'all' ? true :
+      dietaryType === 'veg' ? item.isVegetarian :
+      !item.isVegetarian;
+    
+    const matchesCourse = selectedCourse === 'all' ? true :
+      item.foodCategory === selectedCourse;
+    
+    return matchesSearch && matchesDietary && matchesCourse;
+  });
 
   return (
     <div className="pt-16">
@@ -43,18 +56,14 @@ export default function NorthIndianMenu() {
             Back to Home
           </Link>
 
-          <div className="relative w-full sm:w-96">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="search"
-              placeholder="Search dishes..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
+          <FilterBar 
+            searchQuery={searchQuery}
+            onSearch={setSearchQuery}
+            dietaryType={dietaryType}
+            onDietaryToggle={setDietaryType}
+            selectedCourse={selectedCourse}
+            onCourseFilter={setSelectedCourse}
+          />
         </div>
 
         <MenuGrid items={filteredItems} />
@@ -62,7 +71,6 @@ export default function NorthIndianMenu() {
     </div>
   );
 }
-
 const MENU_ITEMS: MenuItem[] = [
   {
     id: '1',
@@ -72,7 +80,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Starter'
   },
   {
     id: '2',
@@ -82,7 +91,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: true,
     image: 'https://plus.unsplash.com/premium_photo-1700253176330-71ee9f44e30b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Starter'
   },
   {
     id: '3',
@@ -92,7 +102,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Main Course'
   },
   {
     id: '4',
@@ -102,7 +113,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 3,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Main Course'
   },
   {
     id: '5',
@@ -112,7 +124,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Main Course'
   },
   {
     id: '6',
@@ -122,7 +135,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 3,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Main Course'
   },
   {
     id: '7',
@@ -132,7 +146,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1618449840665-9ed506d73a34?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Main Course'
   },
   {
     id: '8',
@@ -142,7 +157,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1697155406014-04dc649b0953?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Bread'
   },
   {
     id: '9',
@@ -152,7 +168,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Main Course'
   },
   {
     id: '10',
@@ -162,6 +179,7 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Starter'
   }
 ];

@@ -21,7 +21,10 @@ export default function MenuGrid({ items }: MenuGridProps) {
           />
           <div className="p-6">
             <div className="flex justify-between items-start mb-2">
-              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <div>
+                <h3 className="text-lg font-semibold">{item.name}</h3>
+                <span className="text-sm text-gray-500">{item.foodCategory}</span>
+              </div>
               <span className="text-lg font-medium text-indigo-600">
                 ${item.price.toFixed(2)}
               </span>
@@ -47,9 +50,6 @@ export default function MenuGrid({ items }: MenuGridProps) {
                 {item.isVegetarian ? 'Veg' : 'Non-veg'}
               </span>
             </div>
-            {/* <button className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-colors">
-              Add to Cart
-            </button> */}
           </div>
         </div>
       ))}

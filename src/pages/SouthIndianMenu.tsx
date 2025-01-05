@@ -66,7 +66,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Starter'
   },
   {
     id: 'S1',
@@ -76,7 +77,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Starter'
   },
   {
     id: 'S2',
@@ -86,7 +88,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Starter'
   },
   {
     id: 'S3',
@@ -96,7 +99,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Starter'
   },
   {
     id: 'S4',
@@ -106,7 +110,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 3,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1642821373181-696a54913e93?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Main Course'
   },
   {
     id: 'S5',
@@ -116,7 +121,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Main Course'
   },
   {
     id: 'S6',
@@ -126,7 +132,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Main Course'
   },
   {
     id: 'S7',
@@ -136,7 +143,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Dessert'
   },
   {
     id: 'S8',
@@ -146,6 +154,7 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Beverages'
   }
 ];

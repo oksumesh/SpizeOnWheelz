@@ -20,7 +20,7 @@ function App() {
             <Route path="/menu/south" element={<SouthIndianMenu />} />
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

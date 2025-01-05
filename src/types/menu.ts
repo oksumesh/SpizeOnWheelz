@@ -7,4 +7,5 @@ export interface MenuItem {
   isVegetarian: boolean;
   image: string;
   category: 'north' | 'south';
+  foodCategory: string;
 }
