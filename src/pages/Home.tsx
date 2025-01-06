@@ -11,7 +11,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800',
-    category: 'north'
+    category: 'north',
+    foodCategory: 'Main Course'
   },
   {
     id: '2',
@@ -21,7 +22,8 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=800',
-    category: 'south'
+    category: 'south',
+    foodCategory: 'Main Course'
   },
   // Add more menu items as needed
 ];

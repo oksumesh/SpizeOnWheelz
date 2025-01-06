@@ -1,17 +1,30 @@
 import React, { useState } from 'react';
 import MenuGrid from '../components/MenuGrid';
 import { MenuItem } from '../types/menu';
-import { ArrowLeft, Search } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import FilterBar from '../components/FilterBar';
 
 export default function SouthIndianMenu() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [dietaryType, setDietaryType] = useState<'all' | 'veg' | 'non-veg'>('all');
+  const [selectedCourse, setSelectedCourse] = useState('all');
+  
   const allItems = MENU_ITEMS.filter(item => item.category === 'south');
   
-  const filteredItems = allItems.filter(item => 
-    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredItems = allItems.filter(item => {
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesDietary = dietaryType === 'all' ? true :
+      dietaryType === 'veg' ? item.isVegetarian :
+      !item.isVegetarian;
+    
+    const matchesCourse = selectedCourse === 'all' ? true :
+      item.foodCategory === selectedCourse;
+    
+    return matchesSearch && matchesDietary && matchesCourse;
+  });
 
   return (
     <div className="pt-16">
@@ -20,38 +33,37 @@ export default function SouthIndianMenu() {
       }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl font-bold mb-4">South Indian Specialties</h1>
+          <h1 className="text-4xl font-bold mb-4">South Indian Delicacies</h1>
           <p className="text-xl max-w-2xl text-center">
             Discover the authentic tastes of South India
           </p>
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-          <Link 
-            to="/" 
-            className="inline-flex items-center text-indigo-600 hover:text-indigo-700"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Home
-          </Link>
+      <div className="bg-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <Link 
+              to="/" 
+              className="inline-flex items-center text-indigo-600 hover:text-indigo-700"
+            >
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Home
+            </Link>
 
-          <div className="relative w-full sm:w-96">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="search"
-              placeholder="Search dishes..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            <FilterBar 
+              searchQuery={searchQuery}
+              onSearch={setSearchQuery}
+              dietaryType={dietaryType}
+              onDietaryToggle={setDietaryType}
+              selectedCourse={selectedCourse}
+              onCourseFilter={setSelectedCourse}
+              menuType="south"
             />
           </div>
-        </div>
 
-        <MenuGrid items={filteredItems} />
+          <MenuGrid items={filteredItems} />
+        </div>
       </div>
     </div>
   );
@@ -67,7 +79,7 @@ const MENU_ITEMS: MenuItem[] = [
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=800',
     category: 'south',
-    foodCategory: 'Starter'
+    foodCategory: 'Starters'
   },
   {
     id: 'S1',
@@ -78,7 +90,7 @@ const MENU_ITEMS: MenuItem[] = [
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800',
     category: 'south',
-    foodCategory: 'Starter'
+    foodCategory: 'Starters'
   },
   {
     id: 'S2',
@@ -89,7 +101,7 @@ const MENU_ITEMS: MenuItem[] = [
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=800',
     category: 'south',
-    foodCategory: 'Starter'
+    foodCategory: 'Starters'
   },
   {
     id: 'S3',
@@ -100,7 +112,7 @@ const MENU_ITEMS: MenuItem[] = [
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&q=80&w=800',
     category: 'south',
-    foodCategory: 'Starter'
+    foodCategory: 'Starters'
   },
   {
     id: 'S4',
@@ -154,6 +166,7 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&q=80&w=800',
+
     category: 'south',
     foodCategory: 'Beverages'
   }
