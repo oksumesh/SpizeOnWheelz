@@ -3,9 +3,13 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  spiceLevel: 1 | 2 | 3;
+  spiceLevel: number;
   isVegetarian: boolean;
-  image: string;
-  category: 'north' | 'south';
+  image?: string;
+  category: string;
   foodCategory: string;
+  rating?: number;
+  ratingCount?: number;
+  isPopular?: boolean;
+  
 }
