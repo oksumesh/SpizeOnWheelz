@@ -61,17 +61,23 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const decrementQuantity = (itemId: string) => {
-    setItems((currentItems) =>
-      currentItems.map((item) => {
-        if (item.id === itemId) {
-          const newQuantity = item.quantity - 1;
-          return newQuantity === 0
-            ? item // Will be filtered out below
-            : { ...item, quantity: newQuantity };
-        }
-        return item;
-      }).filter((item) => item.quantity > 0)
-    );
+    setItems((currentItems) => {
+      // Find the item
+      const item = currentItems.find((i) => i.id === itemId);
+      
+      // If item not found or quantity is already 0, return current items
+      if (!item || item.quantity === 0) return currentItems;
+      
+      // If quantity is 1, remove the item
+      if (item.quantity === 1) {
+        return currentItems.filter((i) => i.id !== itemId);
+      }
+      
+      // Otherwise decrease quantity by 1
+      return currentItems.map((i) =>
+        i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i
+      );
+    });
   };
 
   const clearCart = () => {

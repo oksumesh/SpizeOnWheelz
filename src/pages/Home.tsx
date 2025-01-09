@@ -1,6 +1,8 @@
 import React from 'react';
 import CuisineSection from '../components/CuisineSection';
 import { MenuItem } from '../types/menu';
+import RiverstoneHome from '../assets/RiverstoneHome.png'
+import SchofieldsHome from '../assets/SchofieldsHome.png'
 
 const MENU_ITEMS: MenuItem[] = [
   {
@@ -36,22 +38,22 @@ export default function Home() {
     <div className="pt-16">
       <div className="flex flex-col md:flex-row h-[calc(100vh-4rem)]">
         <div className="flex-1 h-[50vh] md:h-full">
-          <CuisineSection
-            title="Riverstone Delicacies"
-            description="Experience the rich, aromatic flavors of Riverstone"
-            backgroundImage="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070"
-            items={riverstoneItems}
-            type="riverstone"
+        <CuisineSection
+            title="Schofields Specials"
+            description="Discover the authentic tastes of Schofields"
+            backgroundImage={SchofieldsHome}
+            items={schofieldsItems}
+            type="schofields"
           />
         </div>
         
         <div className="flex-1 h-[50vh] md:h-full">
-          <CuisineSection
-            title="Schofields Specials"
-            description="Discover the authentic tastes of Schofields"
-            backgroundImage="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=2070"
-            items={schofieldsItems}
-            type="schofields"
+        <CuisineSection
+            title="Riverstone Delicacies"
+            description="Experience the rich, aromatic flavors of Riverstone"
+            backgroundImage={RiverstoneHome}
+            items={riverstoneItems}
+            type="riverstone"
           />
         </div>
       </div>

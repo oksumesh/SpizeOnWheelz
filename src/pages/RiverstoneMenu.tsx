@@ -3,6 +3,7 @@ import { MenuItem } from '../types/menu';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import CartPopup from '../components/CartPopup';
 
 export default function RiverstoneMenu() {
   const [activeCategory, setActiveCategory] = useState('BIRYANI');
@@ -10,6 +11,7 @@ export default function RiverstoneMenu() {
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const navRef = useRef<HTMLDivElement>(null);
   const { addToCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
+  const [isCartOpen, setIsCartOpen] = useState(false);
   
   const categories = ['BIRYANI', 'DOSA', 'DRINKS', 'CHAT', 'DESSERT', 'NOODLES', 'RICE', 'TIFFINS', 'STARTERS'];
 
@@ -71,6 +73,8 @@ export default function RiverstoneMenu() {
         return 'No Spice';
     }
   };
+
+  console.log('Rendering RiverstoneMenu CartPopup');
 
   return (
     <div className="pt-16">
@@ -202,6 +206,11 @@ export default function RiverstoneMenu() {
           </div>
         </div>
       </div>
+      <CartPopup 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)}
+        location="riverstone"
+      />
     </div>
   );
 }
