@@ -6,7 +6,7 @@ export interface MenuItem {
   spiceLevel: number;
   isVegetarian: boolean;
   image?: string;
-  category: string;
+  category: 'riverstone' | 'schofields';
   foodCategory: string;
   rating?: number;
   ratingCount?: number;

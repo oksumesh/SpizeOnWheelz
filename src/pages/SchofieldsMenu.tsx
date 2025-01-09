@@ -2,12 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import { MenuItem } from '../types/menu';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
-export default function NorthIndianMenu() {
+export default function SchofieldsMenu() {
   const [activeCategory, setActiveCategory] = useState('BIRYANI');
   const [searchQuery, setSearchQuery] = useState('');
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const navRef = useRef<HTMLDivElement>(null);
+  const { addToCart, removeFromCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
   
   const categories = ['BIRYANI', 'DOSA', 'DRINKS', 'CHAT', 'DESSERT', 'NOODLES', 'RICE', 'TIFFINS', 'STARTERS'];
 
@@ -42,6 +44,7 @@ export default function NorthIndianMenu() {
     categoryRefs.current[category]?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Add this function to filter items based on search
   const getFilteredItems = (category: string) => {
     const categoryItems = MENU_ITEMS.filter(
       item => item.foodCategory === category
@@ -55,6 +58,7 @@ export default function NorthIndianMenu() {
     );
   };
 
+  // Add the helper function
   const getSpiceLevelLabel = (level: number): string => {
     switch (level) {
       case 1:
@@ -73,13 +77,13 @@ export default function NorthIndianMenu() {
   return (
     <div className="pt-16">
       <div className="relative h-[300px] bg-cover bg-center" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070)'
+        backgroundImage: 'url(https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=2070)'
       }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl font-bold mb-4">North Indian Delicacies</h1>
+          <h1 className="text-4xl font-bold mb-4">Schofields Specials</h1>
           <p className="text-xl max-w-2xl text-center">
-            Experience the rich, aromatic flavors of North India
+            Discover the authentic tastes of Schofields
           </p>
         </div>
       </div>
@@ -125,6 +129,7 @@ export default function NorthIndianMenu() {
             {categories.map((category) => {
               const categoryItems = getFilteredItems(category);
               
+              // Skip rendering empty categories when searching
               if (searchQuery && categoryItems.length === 0) return null;
 
               return (
@@ -154,20 +159,36 @@ export default function NorthIndianMenu() {
                                 </span>
                               </div>
                             )}
-                            {item.rating && (
-                              <div className="text-gray-400 text-sm mt-1">
-                                👍 {item.rating}% ({item.ratingCount})
-                              </div>
-                            )}
-                            {item.isPopular && (
-                              <span className="inline-block bg-indigo-500 text-white text-xs px-2 py-1 rounded mt-1">
-                                Popular
-                              </span>
-                            )}
                           </div>
-                          <button className="ml-4 p-2 text-2xl text-white hover:bg-gray-800 rounded-full">
-                            +
-                          </button>
+                          {isItemInCart(item.id) ? (
+                            <div className="flex items-center space-x-2">
+                              <button
+                                onClick={() => decrementQuantity(item.id)}
+                                className="w-8 h-8 flex items-center justify-center text-white bg-gray-700 hover:bg-gray-600 rounded-full transition-colors"
+                              >
+                                <span className="sr-only">Decrease quantity</span>
+                                -
+                              </button>
+                              <span className="text-white w-6 text-center">
+                                {getItemQuantity(item.id)}
+                              </span>
+                              <button
+                                onClick={() => incrementQuantity(item.id)}
+                                className="w-8 h-8 flex items-center justify-center text-white bg-gray-700 hover:bg-gray-600 rounded-full transition-colors"
+                              >
+                                <span className="sr-only">Increase quantity</span>
+                                +
+                              </button>
+                            </div>
+                          ) : (
+                            <button
+                              onClick={() => addToCart(item)}
+                              className="ml-4 p-2 text-2xl text-white bg-green-600 hover:bg-green-700 rounded-full transition-colors w-8 h-8 flex items-center justify-center"
+                            >
+                              <span className="sr-only">Add to cart</span>
+                              +
+                            </button>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -176,6 +197,7 @@ export default function NorthIndianMenu() {
               );
             })}
             
+            {/* Show message when no results found */}
             {searchQuery && categories.every(category => getFilteredItems(category).length === 0) && (
               <div className="text-center py-8">
                 <p className="text-gray-400">No menu items found matching "{searchQuery}"</p>

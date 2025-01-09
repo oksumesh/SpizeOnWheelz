@@ -4,24 +4,27 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import NorthIndianMenu from './pages/NorthIndianMenu';
-import SouthIndianMenu from './pages/SouthIndianMenu';
+import RiverstoneMenu from './pages/RiverstoneMenu';
+import SchofieldsMenu from './pages/SchofieldsMenu';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50 relative">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/menu/north" element={<NorthIndianMenu />} />
-            <Route path="/menu/south" element={<SouthIndianMenu />} />
-          </Routes>
-        </main>
-        {/* <Footer /> */}
-      </div>
+      <CartProvider>
+        <div className="min-h-screen bg-gray-50 relative">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/menu/riverstone" element={<RiverstoneMenu />} />
+              <Route path="/menu/schofields" element={<SchofieldsMenu />} />
+            </Routes>
+          </main>
+          {/* <Footer /> */}
+        </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }

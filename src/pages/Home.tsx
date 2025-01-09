@@ -11,7 +11,7 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: false,
     image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800',
-    category: 'north',
+    category: 'riverstone',
     foodCategory: 'Main Course'
   },
   {
@@ -22,36 +22,36 @@ const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isVegetarian: true,
     image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=800',
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'Main Course'
   },
   // Add more menu items as needed
 ];
 
 export default function Home() {
-  const northIndianItems = MENU_ITEMS.filter(item => item.category === 'north');
-  const southIndianItems = MENU_ITEMS.filter(item => item.category === 'south');
+  const riverstoneItems = MENU_ITEMS.filter(item => item.category === 'riverstone');
+  const schofieldsItems = MENU_ITEMS.filter(item => item.category === 'schofields');
 
   return (
-    <div className="h-screen overflow-hidden pt-16">
-      <div className="flex flex-col md:flex-row h-[calc(100vh-64px)]">
+    <div className="pt-16">
+      <div className="flex flex-col md:flex-row h-[calc(100vh-4rem)]">
         <div className="flex-1 h-[50vh] md:h-full">
           <CuisineSection
             title="Riverstone Delicacies"
             description="Experience the rich, aromatic flavors of Riverstone"
             backgroundImage="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070"
-            items={northIndianItems}
-            type="north"
+            items={riverstoneItems}
+            type="riverstone"
           />
         </div>
         
         <div className="flex-1 h-[50vh] md:h-full">
           <CuisineSection
-            title="Schofield Specialties"
-            description="Discover the authentic tastes of Schofield"
+            title="Schofields Specials"
+            description="Discover the authentic tastes of Schofields"
             backgroundImage="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=2070"
-            items={southIndianItems}
-            type="south"
+            items={schofieldsItems}
+            type="schofields"
           />
         </div>
       </div>

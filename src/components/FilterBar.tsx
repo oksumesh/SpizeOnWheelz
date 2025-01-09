@@ -8,10 +8,10 @@ interface FilterBarProps {
   searchQuery: string;
   dietaryType: 'all' | 'veg' | 'non-veg';
   selectedCourse: string;
-  menuType: 'north' | 'south';
+  menuType: 'riverstone' | 'schofields';
 }
 
-const NORTH_INDIAN_COURSES = [
+const RIVERSTONE_COURSES = [
   'All Courses',
   'Starters',
   'Snacks',
@@ -28,7 +28,7 @@ const NORTH_INDIAN_COURSES = [
   'Dessert'
 ];
 
-const SOUTH_INDIAN_COURSES = [
+const SCHOFELDS_COURSES = [
   'All Courses',
   'Starters',
   'Biryani',
@@ -50,7 +50,7 @@ export default function FilterBar({
   selectedCourse,
   menuType 
 }: FilterBarProps) {
-  const foodCourses = menuType === 'north' ? NORTH_INDIAN_COURSES : SOUTH_INDIAN_COURSES;
+  const foodCourses = menuType === 'riverstone' ? RIVERSTONE_COURSES : SCHOFELDS_COURSES;
 
   return (
     <div className="bg-transparent border-b border-gray-300 sticky top-16 z-40">

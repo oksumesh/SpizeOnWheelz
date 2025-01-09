@@ -8,7 +8,7 @@ interface CuisineSectionProps {
   description: string;
   backgroundImage: string;
   items: MenuItem[];
-  type: 'north' | 'south';
+  type: 'riverstone' | 'schofields';
 }
 
 export default function CuisineSection({
@@ -19,11 +19,15 @@ export default function CuisineSection({
 }: CuisineSectionProps) {
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate(`/menu/${type}`);
+  };
+
   return (
     <div
       className="relative h-full bg-cover bg-center cursor-pointer group overflow-hidden"
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      onClick={() => navigate(`/menu/${type}`)}
+      onClick={handleClick}
     >
       {/* Darker overlay for better text visibility */}
       <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
