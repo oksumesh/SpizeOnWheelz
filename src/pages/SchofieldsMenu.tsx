@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import CartPopup from '../components/CartPopup';
+import SchofieldsHome from '../assets/SchofieldsHome.png';
 
 export default function SchofieldsMenu() {
   const [activeCategory, setActiveCategory] = useState('BIRYANI');
@@ -81,7 +82,7 @@ export default function SchofieldsMenu() {
   return (
     <div className="pt-16">
       <div className="relative h-[300px] bg-cover bg-center" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=2070)'
+        backgroundImage: `url(${SchofieldsHome})`
       }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">

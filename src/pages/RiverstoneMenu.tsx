@@ -4,6 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import CartPopup from '../components/CartPopup';
+import RiverstoneHome from '../assets/RiverstoneHome.png';
+
 
 export default function RiverstoneMenu() {
   const [activeCategory, setActiveCategory] = useState('BIRYANI');
@@ -79,7 +81,7 @@ export default function RiverstoneMenu() {
   return (
     <div className="pt-16">
       <div className="relative h-[300px] bg-cover bg-center" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=2070)'
+        backgroundImage: `url(${RiverstoneHome})`
       }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">

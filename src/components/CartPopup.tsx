@@ -43,6 +43,11 @@ const PHONE_NUMBERS = {
   schofields: '466443377'
 };
 
+const isValidAustralianMobile = (phone: string) => {
+  // Just check if we have exactly 8 digits for the remaining part
+  return /^\d{8}$/.test(phone);
+};
+
 export default function CartPopup({ isOpen, onClose }: CartPopupProps) {
   const { items, incrementQuantity, decrementQuantity } = useCart();
   const [step, setStep] = useState<CheckoutStep>('cart');
@@ -234,35 +239,36 @@ Total: $${total.toFixed(2)}`;
                 id="phone"
                 value={customerDetails.phone}
                 onChange={(e) => {
-                  // Remove any non-digit characters
                   const cleaned = e.target.value.replace(/\D/g, '');
-                  // Remove "04" prefix if user typed it
-                  const withoutPrefix = cleaned.startsWith('04') 
-                    ? cleaned.slice(2) 
-                    : cleaned;
-                  // Limit to 8 digits (since we're adding "04" prefix)
-                  const truncated = withoutPrefix.slice(0, 8);
+                  const truncated = cleaned.slice(0, 8);
                   setCustomerDetails(prev => ({ ...prev, phone: truncated }));
                 }}
                 onKeyPress={(e) => {
-                  // Allow only numbers
                   if (!/[0-9]/.test(e.key)) {
                     e.preventDefault();
                   }
-                  // Prevent input if already at 8 digits and not backspace/delete
                   if (customerDetails.phone.length >= 8 && e.key !== 'Backspace' && e.key !== 'Delete') {
                     e.preventDefault();
                   }
                 }}
-                className="flex-1 p-2 pl-8 border border-gray-300 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500"
+                className={`flex-1 p-2 pl-8 border border-gray-300 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 ${
+                  customerDetails.phone && !isValidAustralianMobile(customerDetails.phone) 
+                    ? 'border-red-300' 
+                    : ''
+                }`}
                 placeholder="XXXX XXXX"
                 maxLength={8}
                 pattern="[0-9]{8}"
-                title="Please enter 8 digits after 04"
+                title="Please enter 8 digits"
                 required
               />
             </div>
           </div>
+          {customerDetails.phone && !isValidAustralianMobile(customerDetails.phone) && (
+            <p className="mt-1 text-sm text-red-600">
+              Please enter a valid mobile number
+            </p>
+          )}
         </div>
         <div>
           <label htmlFor="pickupDate" className="block text-sm font-medium text-gray-700 mb-1">
@@ -298,8 +304,14 @@ Total: $${total.toFixed(2)}`;
         </div>
         <button 
           onClick={handleOrder}
-          className="w-full bg-green-600 text-white py-3 rounded-md font-medium hover:bg-green-700 transition-colors"
-          disabled={!customerDetails.name || !customerDetails.phone || !customerDetails.pickupTime || !customerDetails.pickupDate}
+          className="w-full bg-green-600 text-white py-3 rounded-md font-medium hover:bg-green-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+          disabled={
+            !customerDetails.name || 
+            !customerDetails.phone || 
+            !customerDetails.pickupTime || 
+            !customerDetails.pickupDate ||
+            !isValidAustralianMobile(customerDetails.phone)
+          }
         >
           Order Now
         </button>
