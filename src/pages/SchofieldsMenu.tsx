@@ -229,7 +229,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 20.45,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'BIRYANI',
     rating: 87,
     ratingCount: 49
@@ -241,7 +241,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 16.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'BIRYANI'
   },
   {
@@ -251,7 +251,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 19.45,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'BIRYANI',
     rating: 100,
     ratingCount: 6
@@ -263,7 +263,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 19.45,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'BIRYANI',
     rating: 87,
     ratingCount: 8
@@ -275,7 +275,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 3.45,
     spiceLevel: 0,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'BIRYANI',
     rating: 100,
     ratingCount: 4
@@ -289,7 +289,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 14.45,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     isPopular: true
   },
@@ -300,7 +300,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 11.95,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -310,7 +310,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 10.45,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     rating: 86,
     ratingCount: 15
@@ -322,7 +322,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 15.45,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -332,7 +332,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 13.95,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     rating: 100,
     ratingCount: 9
@@ -344,7 +344,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 13.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -354,7 +354,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 14.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -364,7 +364,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 14.45,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     rating: 83,
     ratingCount: 6
@@ -376,7 +376,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 15.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     rating: 100,
     ratingCount: 3
@@ -388,7 +388,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 15.45,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     rating: 100,
     ratingCount: 9
@@ -400,7 +400,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 15.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     rating: 100,
     ratingCount: 9
@@ -412,7 +412,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 14.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -422,7 +422,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 14.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -432,7 +432,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 13.45,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA',
     rating: 100,
     ratingCount: 4
@@ -444,7 +444,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 3.45,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -454,7 +454,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 14.54,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
   {
@@ -464,7 +464,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 11.95,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DOSA'
   },
 
@@ -476,7 +476,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 6.95,
     spiceLevel: 0,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DRINKS',
     rating: 86,
     ratingCount: 29
@@ -488,7 +488,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 3.95,
     spiceLevel: 0,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DRINKS',
     rating: 87,
     ratingCount: 8
@@ -500,7 +500,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 3.95,
     spiceLevel: 0,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DRINKS'
   },
   {
@@ -510,7 +510,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 3.95,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DRINKS'
   },
 
@@ -522,7 +522,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 12.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'CHAT',
     rating: 93,
     ratingCount: 16
@@ -534,7 +534,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 10.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'CHAT'
   },
   {
@@ -544,7 +544,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 5.95,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'CHAT',
     rating: 100,
     ratingCount: 3
@@ -556,7 +556,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 9.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'CHAT'
   },
 
@@ -568,7 +568,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 7.45,
     spiceLevel: 0,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'DESSERT',
     rating: 83,
     ratingCount: 6
@@ -582,7 +582,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES',
     rating: 96,
     ratingCount: 33
@@ -594,7 +594,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES',
     rating: 95,
     ratingCount: 22
@@ -606,7 +606,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 16.95,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES'
   },
   {
@@ -616,7 +616,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES'
   },
   {
@@ -626,7 +626,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES'
   },
   {
@@ -636,7 +636,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 2.45,
     spiceLevel: 0,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES',
     rating: 100,
     ratingCount: 7
@@ -648,7 +648,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 1,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES'
   },
   {
@@ -658,7 +658,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES',
     rating: 100,
     ratingCount: 5
@@ -670,7 +670,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES'
   },
   {
@@ -680,7 +680,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 1.95,
     spiceLevel: 0,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES'
   },
   {
@@ -690,7 +690,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 1,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'NOODLES',
     rating: 100,
     ratingCount: 6
@@ -704,7 +704,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 87,
     ratingCount: 8
@@ -716,7 +716,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 16.95,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 100,
     ratingCount: 3
@@ -728,7 +728,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     isPopular: true
   },
@@ -739,7 +739,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 2.45,
     spiceLevel: 0,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 100,
     ratingCount: 7
@@ -751,7 +751,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     isPopular: true
   },
@@ -762,7 +762,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE'
   },
   {
@@ -772,7 +772,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 1,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 83,
     ratingCount: 12
@@ -784,7 +784,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 100,
     ratingCount: 4
@@ -796,7 +796,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 1.95,
     spiceLevel: 0,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE'
   },
   {
@@ -806,7 +806,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     isPopular: true
   },
@@ -817,7 +817,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 100,
     ratingCount: 3
@@ -829,7 +829,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 100,
     ratingCount: 3
@@ -841,7 +841,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 19.45,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'RICE',
     rating: 83,
     ratingCount: 6
@@ -855,7 +855,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 9.95,
     spiceLevel: 4,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS',
     rating: 88,
     ratingCount: 25
@@ -867,7 +867,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 11.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS'
   },
   {
@@ -877,7 +877,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 11.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS',
     rating: 100,
     ratingCount: 12
@@ -889,7 +889,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 10.95,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS'
   },
   {
@@ -899,7 +899,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 9.95,
     spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS',
     rating: 88,
     ratingCount: 25
@@ -911,7 +911,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 12.45,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS',
     rating: 100,
     ratingCount: 4
@@ -923,7 +923,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 6.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS',
     rating: 100,
     ratingCount: 5
@@ -935,7 +935,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 11.95,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS'
   },
   {
@@ -945,7 +945,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 3.45,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'TIFFINS'
   },
 
@@ -957,7 +957,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 89,
     ratingCount: 55
@@ -969,7 +969,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 19.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     isPopular: true
   },
@@ -980,7 +980,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 19.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 89,
     ratingCount: 39
@@ -992,7 +992,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 19.95,
     spiceLevel: 3,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 87,
     ratingCount: 16
@@ -1004,7 +1004,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 19.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     isPopular: true
   },
@@ -1015,7 +1015,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 90,
     ratingCount: 11
@@ -1027,7 +1027,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 100,
     ratingCount: 6
@@ -1039,7 +1039,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     isPopular: true
   },
@@ -1050,7 +1050,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 2.45,
     spiceLevel: 0,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 100,
     ratingCount: 7
@@ -1062,7 +1062,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 100,
     ratingCount: 8
@@ -1074,7 +1074,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS'
   },
   {
@@ -1084,7 +1084,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS'
   },
   {
@@ -1094,7 +1094,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS',
     rating: 100,
     ratingCount: 5
@@ -1106,7 +1106,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 18.95,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS'
   },
   {
@@ -1116,7 +1116,7 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     price: 1.95,
     spiceLevel: 0,
     isVegetarian: false,
-    category: 'south',
+    category: 'schofields',
     foodCategory: 'STARTERS'
   },
 ];

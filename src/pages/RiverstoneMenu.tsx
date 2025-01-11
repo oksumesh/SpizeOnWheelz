@@ -15,7 +15,7 @@ export default function RiverstoneMenu() {
   const { addToCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
   
-  const categories = ['BIRYANI', 'DOSA', 'DRINKS', 'CHAT', 'DESSERT', 'NOODLES', 'RICE', 'TIFFINS', 'STARTERS'];
+  const categories = ['STARTERS', 'SNACKS', 'NAAN', 'SIDES', 'IDLY', 'CHAT', 'DOSA', 'ROLLS', 'KULCHAS', 'CURRIES', 'BIRYANI', 'DRINKS', 'DESSERT'];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -218,902 +218,815 @@ export default function RiverstoneMenu() {
 }
 
 const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
-  // BIRYANI
+  // STARTERS
   {
-    id: 'B1',
-    name: 'CHICKEN 65-BIRYANI',
-    description: 'Spicy chicken 65 biryani',
-    price: 20.45,
-    spiceLevel: 3,
+    id: 'ST1',
+    name: 'PANEER TIKKA',
+    description: 'Paneer Tikka',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'STARTERS'
+  },
+  {
+    id: 'ST2',
+    name: 'SOYA CHAAP TANDOORI',
+    description: 'Soya Chaap Tandoori',
+    price: 20.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'STARTERS'
+  },
+  {
+    id: 'ST3',
+    name: 'SOYA CHAAP MALAI',
+    description: 'Soya Chaap Malai',
+    price: 22.95,
+    spiceLevel: 1,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'STARTERS'
+  },
+  {
+    id: 'ST4',
+    name: 'CHICKEN TIKKA',
+    description: 'Chicken Tikka',
+    price: 21.95,
+    spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
-    foodCategory: 'BIRYANI',
-    rating: 87,
-    ratingCount: 49
+    category: 'riverstone',
+    foodCategory: 'STARTERS'
   },
   {
-    id: 'B2',
-    name: 'CHICKEN DUM- BIRIYANI',
-    description: 'Traditional dum style chicken biryani',
-    price: 16.95,
-    spiceLevel: 3,
+    id: 'ST5',
+    name: 'TANDOORI CHICKEN',
+    description: 'Tandoori Chicken',
+    price: 20.95,
+    spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
-    foodCategory: 'BIRYANI'
-  },
-  {
-    id: 'B3',
-    name: 'BIRYANI - PANNER 65',
-    description: 'Paneer 65 biryani',
-    price: 19.45,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'BIRYANI',
-    rating: 100,
-    ratingCount: 6
-  },
-  {
-    id: 'B4',
-    name: 'GOBI 65-BIRYANI',
-    description: 'Cauliflower 65 biryani',
-    price: 19.45,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'BIRYANI',
-    rating: 87,
-    ratingCount: 8
-  },
-  {
-    id: 'B5',
-    name: 'EXTRA RAITHA',
-    description: 'Yogurt side dish',
-    price: 3.45,
-    spiceLevel: 0,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'BIRYANI',
-    rating: 100,
-    ratingCount: 4
-  },
-
-  // DOSA
-  {
-    id: 'D1',
-    name: 'DOSA MASALA',
-    description: 'Classic masala dosa',
-    price: 14.45,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA',
+    category: 'riverstone',
+    foodCategory: 'STARTERS',
     isPopular: true
   },
   {
-    id: 'D2',
-    name: 'DOSA GHEE',
-    description: 'Plain dosa with ghee',
-    price: 11.95,
-    spiceLevel: 1,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D3',
-    name: 'DOSA PLAIN',
-    description: 'Traditional plain dosa',
-    price: 10.45,
-    spiceLevel: 1,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA',
-    rating: 86,
-    ratingCount: 15
-  },
-  {
-    id: 'D4',
-    name: 'DOSA MASALA KARAM',
-    description: 'Spicy masala dosa',
-    price: 15.45,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D5',
-    name: 'DOSA GHEE KARAM',
-    description: 'Spicy dosa with ghee',
-    price: 13.95,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA',
-    rating: 100,
-    ratingCount: 9
-  },
-  {
-    id: 'D6',
-    name: 'DOSA ONION',
-    description: 'Dosa with onion filling',
-    price: 13.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D7',
-    name: 'DOSA PANEER',
-    description: 'Dosa with paneer filling',
-    price: 14.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D8',
-    name: 'DOSA CHICKEN',
-    description: 'Dosa with chicken filling',
-    price: 14.45,
+    id: 'ST6',
+    name: 'LAMB KEBAB',
+    description: 'Lamb Kebab',
+    price: 22.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
-    foodCategory: 'DOSA',
-    rating: 83,
-    ratingCount: 6
+    category: 'riverstone',
+    foodCategory: 'STARTERS'
   },
   {
-    id: 'D9',
-    name: 'DOSA LAMB KARAM',
-    description: 'Spicy dosa with lamb filling',
-    price: 15.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'DOSA',
-    rating: 100,
-    ratingCount: 3
-  },
-  {
-    id: 'D10',
-    name: 'DOSA PANEER KARAM',
-    description: 'Spicy dosa with paneer filling',
-    price: 15.45,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA',
-    rating: 100,
-    ratingCount: 9
-  },
-  {
-    id: 'D11',
-    name: 'DOSA CHICKEN KARAM',
-    description: 'Spicy dosa with chicken filling',
-    price: 15.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'DOSA',
-    rating: 100,
-    ratingCount: 9
-  },
-  {
-    id: 'D12',
-    name: 'DOSA LAMB',
-    description: 'Dosa with lamb filling',
-    price: 14.95,
+    id: 'ST7',
+    name: 'AMRITSARI FISH FRY',
+    description: 'Amritsari Fish Fry',
+    price: 23.95,
     spiceLevel: 2,
     isVegetarian: false,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D13',
-    name: 'DOSA EGG',
-    description: 'Dosa with egg filling',
-    price: 14.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D14',
-    name: 'DOSA ONION KARAM',
-    description: 'Spicy dosa with onion filling',
-    price: 13.45,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA',
-    rating: 100,
-    ratingCount: 4
-  },
-  {
-    id: 'D15',
-    name: 'EXTRA SAMBAR',
-    description: 'Additional sambar',
-    price: 3.45,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D16',
-    name: 'DOSA EGG KARAM',
-    description: 'Spicy dosa with egg filling',
-    price: 14.54,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'DOSA'
-  },
-  {
-    id: 'D17',
-    name: 'DOSA KARAM',
-    description: 'Spicy plain dosa',
-    price: 11.95,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DOSA'
+    category: 'riverstone',
+    foodCategory: 'STARTERS'
   },
 
-  // DRINKS
+  // SNACKS
   {
-    id: 'DR1',
-    name: 'MANGO LASSI',
-    description: 'Sweet mango yogurt drink',
-    price: 6.95,
-    spiceLevel: 0,
+    id: 'SN1',
+    name: 'MIRCHI BAJJI',
+    description: 'Two pieces.',
+    price: 7.99,
+    spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DRINKS',
-    rating: 86,
-    ratingCount: 29
+    category: 'riverstone',
+    foodCategory: 'SNACKS'
   },
   {
-    id: 'DR2',
-    name: 'COCA COLA',
-    description: 'Coca Cola soft drink',
-    price: 3.95,
-    spiceLevel: 0,
+    id: 'SN2',
+    name: 'MIRCHI CUT',
+    description: 'Mirchi Cut',
+    price: 7.99,
+    spiceLevel: 3,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DRINKS',
-    rating: 87,
-    ratingCount: 8
+    category: 'riverstone',
+    foodCategory: 'SNACKS'
   },
   {
-    id: 'DR3',
-    name: 'WATER',
-    description: 'Bottled water',
-    price: 3.95,
-    spiceLevel: 0,
+    id: 'SN3',
+    name: 'PUNUGULU',
+    description: 'Punugulu',
+    price: 13.99,
+    spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DRINKS'
+    category: 'riverstone',
+    foodCategory: 'SNACKS'
   },
   {
-    id: 'DR4',
-    name: 'MASALA TEA',
-    description: 'Indian spiced tea',
-    price: 3.95,
+    id: 'SN4',
+    name: 'SAMOSA',
+    description: 'Two pieces.',
+    price: 7.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'SNACKS'
+  },
+
+  // NAAN
+  {
+    id: 'N1',
+    name: 'GARLIC NAAN',
+    description: 'Garlic Naan',
+    price: 4.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'NAAN',
+    isPopular: true
+  },
+  {
+    id: 'N2',
+    name: 'TANDOORI ROTI',
+    description: 'Tandoori Roti',
+    price: 4.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'NAAN'
+  },
+  {
+    id: 'N3',
+    name: 'PLAIN NAAN',
+    description: 'Plain Naan',
+    price: 4.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'NAAN'
+  },
+  {
+    id: 'N4',
+    name: 'BUTTER NAAN',
+    description: 'Butter Naan',
+    price: 6.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'NAAN'
+  },
+  {
+    id: 'N5',
+    name: 'CHEESE NAAN',
+    description: 'Cheese Naan',
+    price: 7.45,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'NAAN'
+  },
+  {
+    id: 'N6',
+    name: 'CHILLI NAAN',
+    description: 'Spicy',
+    price: 4.99,
+    spiceLevel: 3,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'NAAN',
+    rating: 66,
+    ratingCount: 3
+  },
+
+  // SIDES
+  {
+    id: 'SD1',
+    name: 'SAMBAR',
+    description: 'Sambar',
+    price: 4.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'SIDES'
+  },
+  {
+    id: 'SD2',
+    name: 'SALAD',
+    description: 'Salad',
+    price: 4.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'SIDES'
+  },
+  {
+    id: 'SD3',
+    name: 'LACHHA PYAAZ',
+    description: 'Lachha Pyaaz',
+    price: 4.99,
     spiceLevel: 1,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DRINKS'
+    category: 'riverstone',
+    foodCategory: 'SIDES'
+  },
+  {
+    id: 'SD4',
+    name: 'BOONDI RAITHA',
+    description: 'Boondi Raitha',
+    price: 4.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'SIDES'
+  },
+
+  // IDLY
+  {
+    id: 'ID1',
+    name: 'IDLY',
+    description: 'Three pieces.',
+    price: 11.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'IDLY'
+  },
+  {
+    id: 'ID2',
+    name: 'GHEE IDLY',
+    description: 'Three pieces.',
+    price: 12.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'IDLY'
+  },
+  {
+    id: 'ID3',
+    name: 'SAMBAR IDLY DIP',
+    description: 'Three pieces.',
+    price: 14.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'IDLY',
+    isPopular: true
+  },
+  {
+    id: 'ID4',
+    name: 'GHEE PODI IDLY',
+    description: 'Three pieces.',
+    price: 13.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'IDLY'
   },
 
   // CHAT
   {
     id: 'CH1',
-    name: 'CHAT SAMOSA',
-    description: 'Samosa topped with chutneys',
-    price: 12.95,
+    name: 'SAMOSA CHAT',
+    description: 'Samosa Chat',
+    price: 13.99,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'CHAT',
-    rating: 93,
-    ratingCount: 16
+    category: 'riverstone',
+    foodCategory: 'CHAT'
   },
   {
     id: 'CH2',
-    name: 'CHAT PAPIDI',
-    description: 'Crispy crackers with toppings',
-    price: 10.95,
+    name: 'PAPIDI CHAT',
+    description: 'Papidi Chat',
+    price: 13.99,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'CHAT'
+    category: 'riverstone',
+    foodCategory: 'CHAT',
+    isPopular: true
   },
   {
     id: 'CH3',
-    name: 'DAHI POORI',
-    description: 'Hollow puris with yogurt filling',
-    price: 5.95,
-    spiceLevel: 1,
+    name: 'ALOO TIKKI CHAT',
+    description: 'Aloo Tikki Chat',
+    price: 13.99,
+    spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'CHAT',
-    rating: 100,
-    ratingCount: 3
+    category: 'riverstone',
+    foodCategory: 'CHAT'
   },
   {
     id: 'CH4',
+    name: 'DAHI BHALLA',
+    description: 'Dahi Bhalla',
+    price: 13.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CHAT'
+  },
+  {
+    id: 'CH5',
     name: 'PANI PURI',
-    description: 'Hollow puris with spiced water',
-    price: 9.95,
+    description: 'Six pieces.',
+    price: 8.99,
     spiceLevel: 2,
     isVegetarian: true,
-    category: 'south',
+    category: 'riverstone',
     foodCategory: 'CHAT'
+  },
+  {
+    id: 'CH6',
+    name: 'DAHI PURI',
+    description: 'Six pieces.',
+    price: 10.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CHAT'
+  },
+
+  // DOSA
+  {
+    id: 'D1',
+    name: 'MASALA DOSA',
+    description: 'Masala Dosa',
+    price: 16.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA',
+    isPopular: true
+  },
+  {
+    id: 'D2',
+    name: 'PLAIN DOSA',
+    description: 'Plain Dosa',
+    price: 11.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D3',
+    name: 'GHEE DOSA',
+    description: 'Ghee Dosa',
+    price: 13.99,
+    spiceLevel: 1,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D4',
+    name: 'GHEE PODI DOSA',
+    description: 'Ghee Podi Dosa',
+    price: 14.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D5',
+    name: 'SPECIAL DOSA',
+    description: 'Special Dosa',
+    price: 16.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D6',
+    name: 'EGG DOSA',
+    description: 'Egg Dosa',
+    price: 15.99,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D7',
+    name: 'KARAM DOSA',
+    description: 'Karam Dosa',
+    price: 14.99,
+    spiceLevel: 3,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D8',
+    name: 'ONION DOSA',
+    description: 'Onion Dosa',
+    price: 15.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D9',
+    name: 'PANEER DOSA',
+    description: 'Paneer Dosa',
+    price: 16.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D10',
+    name: 'CHICKEN DOSA',
+    description: 'Chicken Dosa',
+    price: 16.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D11',
+    name: 'LAMB DOSA',
+    description: 'Lamb Dosa',
+    price: 16.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D12',
+    name: 'GHEE KARAM DOSA',
+    description: 'Ghee Karam Dosa',
+    price: 14.99,
+    spiceLevel: 3,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D13',
+    name: 'EGG KARAM DOSA',
+    description: 'Egg Karam Dosa',
+    price: 15.45,
+    spiceLevel: 3,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D14',
+    name: 'ONION KARAM DOSA',
+    description: 'Onion Karam Dosa',
+    price: 15.45,
+    spiceLevel: 3,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D15',
+    name: 'MASALA KARAM DOSA',
+    description: 'Masala Karam Dosa',
+    price: 16.99,
+    spiceLevel: 3,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D16',
+    name: 'PANEER KARAM DOSA',
+    description: 'Paneer Karam Dosa',
+    price: 16.99,
+    spiceLevel: 3,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D17',
+    name: 'CHICKEN KARAM DOSA',
+    description: 'Chicken Karam Dosa',
+    price: 16.99,
+    spiceLevel: 3,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+  {
+    id: 'D18',
+    name: 'LAMB KARAM DOSA',
+    description: 'Lamb Karam Dosa',
+    price: 17.45,
+    spiceLevel: 3,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'DOSA'
+  },
+
+  // ROLLS
+  {
+    id: 'R1',
+    name: 'PANEER TIKKA ROLL',
+    description: 'Paneer Tikka Roll',
+    price: 14.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'ROLLS',
+    isPopular: true
+  },
+  {
+    id: 'R2',
+    name: 'SOYA CHAAP ROLL',
+    description: 'Soya Chaap Roll',
+    price: 14.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'ROLLS'
+  },
+
+  // KULCHAS
+  {
+    id: 'K1',
+    name: 'CHOLE BATHURE',
+    description: 'Chole Bathure',
+    price: 20.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'KULCHAS'
+  },
+  {
+    id: 'K2',
+    name: 'AMIRTSARI KULCHA',
+    description: 'Two pieces.',
+    price: 21.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'KULCHAS',
+    rating: 20,
+    ratingCount: 5
+  },
+  {
+    id: 'K3',
+    name: 'MAKKI ROTI AND SAAG',
+    description: 'Two pieces.',
+    price: 28.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'KULCHAS',
+    isPopular: true
+  },
+  {
+    id: 'K4',
+    name: 'TANDOORI PARATHA',
+    description: 'One piece.',
+    price: 14.99,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'KULCHAS'
+  },
+  {
+    id: 'K5',
+    name: 'KEEMA KULCHA',
+    description: 'One piece.',
+    price: 14.99,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'KULCHAS'
+  },
+
+  // CURRIES
+  {
+    id: 'CU1',
+    name: 'CHICKEN CURRY',
+    description: 'Chicken Curry',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'CURRIES',
+    rating: 33,
+    ratingCount: 3
+  },
+  {
+    id: 'CU2',
+    name: 'BUTTER CHICKEN MASALA CURRY',
+    description: 'Butter Chicken Masala Curry',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'CURRIES',
+    isPopular: true
+  },
+  {
+    id: 'CU3',
+    name: 'GOAT CURRY',
+    description: 'Goat Curry',
+    price: 19.95,
+    spiceLevel: 3,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'CURRIES',
+    isPopular: true
+  },
+  {
+    id: 'CU4',
+    name: 'LAMB CURRY',
+    description: 'Lamb Curry',
+    price: 19.95,
+    spiceLevel: 3,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU5',
+    name: 'DAAL TADAK CURRY',
+    description: 'Daal Tadak Curry',
+    price: 18.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU6',
+    name: 'DAAL MAKHNI CURRY',
+    description: 'Daal Makhni Curry',
+    price: 18.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU7',
+    name: 'CHICKPEAS CURRY',
+    description: 'Chickpeas Curry',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU8',
+    name: 'PALAK PANEER CURRY',
+    description: 'Palak Paneer Curry',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU9',
+    name: 'PANEER BUTTER MASALA CURRY',
+    description: 'Paneer Butter Masala Curry',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU10',
+    name: 'SOYA CHAP MASALA',
+    description: 'Soya Chap Masala',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU11',
+    name: 'KADAI PANEER CURRY',
+    description: 'Kadai Paneer Curry',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU12',
+    name: 'BUTTER CHICKEN CURRY',
+    description: 'Mild',
+    price: 19.95,
+    spiceLevel: 1,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+  {
+    id: 'CU13',
+    name: 'KADAI CHICKEN CURRY',
+    description: 'Kadai Chicken Curry',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'CURRIES'
+  },
+
+  // BIRYANI
+  {
+    id: 'B1',
+    name: 'LAMB BIRYANI',
+    description: 'Lamb Biryani',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'BIRYANI'
+  },
+  {
+    id: 'B2',
+    name: 'GOAT BIRYANI',
+    description: 'Goat Biryani',
+    price: 19.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'BIRYANI',
+    isPopular: true
+  },
+  {
+    id: 'B3',
+    name: 'CHICKEN DUM BIRYANI',
+    description: 'Chicken Dum Biryani',
+    price: 17.95,
+    spiceLevel: 2,
+    isVegetarian: false,
+    category: 'riverstone',
+    foodCategory: 'BIRYANI'
+  },
+
+  // DRINKS
+  {
+    id: 'DR1',
+    name: 'WATER',
+    description: 'Water',
+    price: 4.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DRINKS'
+  },
+  {
+    id: 'DR2',
+    name: 'MANGO LASSI',
+    description: 'Mango Lassi',
+    price: 6.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DRINKS'
+  },
+  {
+    id: 'DR3',
+    name: 'SWEET LASSI',
+    description: 'Sweet Lassi',
+    price: 6.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DRINKS'
+  },
+  {
+    id: 'DR4',
+    name: 'SALTED LASSI',
+    description: 'Salted Lassi',
+    price: 6.99,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DRINKS'
   },
 
   // DESSERT
   {
     id: 'DE1',
     name: 'GULAB JAMUN',
-    description: 'Sweet milk dough balls in syrup',
-    price: 7.45,
+    description: 'Three pieces.',
+    price: 8.99,
     spiceLevel: 0,
     isVegetarian: true,
-    category: 'south',
-    foodCategory: 'DESSERT',
-    rating: 83,
-    ratingCount: 6
-  },
-
-  // NOODLES
-  {
-    id: 'N1',
-    name: 'SCHEZWAN - CHKN NOODLES',
-    description: 'Spicy schezwan chicken noodles',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES',
-    rating: 96,
-    ratingCount: 33
-  },
-  {
-    id: 'N2',
-    name: '65 CHICKEN NOODLES',
-    description: 'Noodles with chicken 65',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES',
-    rating: 95,
-    ratingCount: 22
-  },
-  {
-    id: 'N3',
-    name: 'PLAIN Veg NOODLES',
-    description: 'Simple vegetarian noodles',
-    price: 16.95,
-    spiceLevel: 1,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'NOODLES'
-  },
-  {
-    id: 'N4',
-    name: '65 GOBI NOODLES',
-    description: 'Noodles with cauliflower 65',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'NOODLES'
-  },
-  {
-    id: 'N5',
-    name: 'SCHEZWAN - VEG NOODLES',
-    description: 'Spicy schezwan vegetable noodles',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'NOODLES'
-  },
-  {
-    id: 'N6',
-    name: 'EXTRA CHICKEN',
-    description: 'Additional chicken portion',
-    price: 2.45,
-    spiceLevel: 0,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES',
-    rating: 100,
-    ratingCount: 7
-  },
-  {
-    id: 'N7',
-    name: 'PLAIN Chicken NOODLES',
-    description: 'Simple chicken noodles',
-    price: 18.95,
-    spiceLevel: 1,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES'
-  },
-  {
-    id: 'N8',
-    name: 'SCHEZWAN - EGG NOODLES',
-    description: 'Spicy schezwan egg noodles',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES',
-    rating: 100,
-    ratingCount: 5
-  },
-  {
-    id: 'N9',
-    name: '65 TRIPPLE EGG NOODLES',
-    description: 'Noodles with triple egg and 65 sauce',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES'
-  },
-  {
-    id: 'N10',
-    name: 'EXTRA EGG',
-    description: 'Additional egg',
-    price: 1.95,
-    spiceLevel: 0,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES'
-  },
-  {
-    id: 'N11',
-    name: 'PLAIN Egg NOODLES',
-    description: 'Simple egg noodles',
-    price: 18.95,
-    spiceLevel: 1,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'NOODLES',
-    rating: 100,
-    ratingCount: 6
-  },
-
-  // RICE
-  {
-    id: 'R1',
-    name: '65 CHICKEN FRIED RICE',
-    description: 'Fried rice with chicken 65',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 87,
-    ratingCount: 8
-  },
-  {
-    id: 'R2',
-    name: 'PLAIN VEG FRIED RICE',
-    description: 'Simple vegetarian fried rice',
-    price: 16.95,
-    spiceLevel: 1,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 100,
-    ratingCount: 3
-  },
-  {
-    id: 'R3',
-    name: 'SCHEZWAN - CHKN FRIED RICE',
-    description: 'Spicy schezwan chicken fried rice',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    isPopular: true
-  },
-  {
-    id: 'R4',
-    name: 'EXTRA CHICKEN',
-    description: 'Additional chicken portion',
-    price: 2.45,
-    spiceLevel: 0,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 100,
-    ratingCount: 7
-  },
-  {
-    id: 'R5',
-    name: '65 GOBI FRIED RICE',
-    description: 'Fried rice with cauliflower 65',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'RICE',
-    isPopular: true
-  },
-  {
-    id: 'R6',
-    name: 'CHIC FRIED RICE',
-    description: 'Classic chicken fried rice',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE'
-  },
-  {
-    id: 'R7',
-    name: 'TRIPPLE EGG FRIED RICE',
-    description: 'Fried rice with triple egg',
-    price: 18.95,
-    spiceLevel: 1,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 83,
-    ratingCount: 12
-  },
-  {
-    id: 'R8',
-    name: '65 TRIPPLE EGG FRIED RICE',
-    description: 'Fried rice with triple egg and 65 sauce',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 100,
-    ratingCount: 4
-  },
-  {
-    id: 'R9',
-    name: 'EXTRA EGG',
-    description: 'Additional egg',
-    price: 1.95,
-    spiceLevel: 0,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE'
-  },
-  {
-    id: 'R10',
-    name: 'SCHEZWAN - VEG FRIED RICE',
-    description: 'Spicy schezwan vegetable fried rice',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'RICE',
-    isPopular: true
-  },
-  {
-    id: 'R11',
-    name: 'CHIC KEEMA FRIED RICE',
-    description: 'Fried rice with minced chicken',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 100,
-    ratingCount: 3
-  },
-  {
-    id: 'R12',
-    name: 'SCHEZWAN - EGG FRIED RICE',
-    description: 'Spicy schezwan egg fried rice',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 100,
-    ratingCount: 3
-  },
-  {
-    id: 'R13',
-    name: 'LAMB KEEMA FRIED RICE',
-    description: 'Fried rice with minced lamb',
-    price: 19.45,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'RICE',
-    rating: 83,
-    ratingCount: 6
-  },
-
-  // TIFFINS
-  {
-    id: 'T1',
-    name: 'MIRCHI CUT',
-    description: 'Cut green chilies',
-    price: 9.95,
-    spiceLevel: 4,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS',
-    rating: 88,
-    ratingCount: 25
-  },
-  {
-    id: 'T2',
-    name: 'PUNUGULU',
-    description: 'Deep fried rice batter balls',
-    price: 11.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS'
-  },
-  {
-    id: 'T3',
-    name: 'SAMBAR IDLY DIP',
-    description: 'SOFT STEAMED SAVORY CAKE MADE FORM FERMENTED RICE AND LENTIL BATTER DIPPED IN SMABAR',
-    price: 11.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS',
-    rating: 100,
-    ratingCount: 12
-  },
-  {
-    id: 'T4',
-    name: 'IDLY',
-    description: 'SOFT STEAMED SAVORY CAKE MADE FORM FERMENTED RICE AND LENTIL BATTER SERVED WITH SAMBAR AND PEANTU CHUTNEY',
-    price: 10.95,
-    spiceLevel: 1,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS'
-  },
-  {
-    id: 'T5',
-    name: 'MIRCHI BAJJI',
-    description: 'Stuffed and battered fried green chilies',
-    price: 9.95,
-    spiceLevel: 3,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS',
-    rating: 88,
-    ratingCount: 25
-  },
-  {
-    id: 'T6',
-    name: 'GHEE PODI IDLY',
-    description: 'Idly with ghee and spice powder',
-    price: 12.45,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS',
-    rating: 100,
-    ratingCount: 4
-  },
-  {
-    id: 'T7',
-    name: 'SAMOSA 2pc',
-    description: 'Crispy pastry with spiced potato filling',
-    price: 6.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS',
-    rating: 100,
-    ratingCount: 5
-  },
-  {
-    id: 'T8',
-    name: 'GHEE IDLY',
-    description: 'Idly with ghee',
-    price: 11.95,
-    spiceLevel: 1,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS'
-  },
-  {
-    id: 'T9',
-    name: 'EXTRA SAMBAR',
-    description: 'Additional sambar',
-    price: 3.45,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'TIFFINS'
-  },
-
-  // STARTERS
-  {
-    id: 'ST1',
-    name: 'CHILLI - CHICKEN',
-    description: 'Indo-Chinese style chilli chicken',
-    price: 18.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 89,
-    ratingCount: 55
-  },
-  {
-    id: 'ST2',
-    name: 'CHIC LOLLIPOP',
-    description: 'Spiced chicken wings',
-    price: 19.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    isPopular: true
-  },
-  {
-    id: 'ST3',
-    name: '65-CHICKEN',
-    description: 'Classic chicken 65',
-    price: 19.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 89,
-    ratingCount: 39
-  },
-  {
-    id: 'ST4',
-    name: 'PODI CHICKEN',
-    description: 'Chicken with spice powder',
-    price: 19.95,
-    spiceLevel: 3,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 87,
-    ratingCount: 16
-  },
-  {
-    id: 'ST5',
-    name: 'MANCHURIAN - CHICKEN',
-    description: 'Indo-Chinese style manchurian chicken',
-    price: 19.95,
-    spiceLevel: 2,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    isPopular: true
-  },
-  {
-    id: 'ST6',
-    name: 'VEG MANCHURIA',
-    description: 'Vegetable manchurian',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 90,
-    ratingCount: 11
-  },
-  {
-    id: 'ST7',
-    name: 'CHILLI - PANNER',
-    description: 'Indo-Chinese style chilli paneer',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 100,
-    ratingCount: 6
-  },
-  {
-    id: 'ST8',
-    name: 'MANCHURIAN - GOBI',
-    description: 'Cauliflower manchurian',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    isPopular: true
-  },
-  {
-    id: 'ST9',
-    name: 'EXTRA CHICKEN',
-    description: 'Additional chicken portion',
-    price: 2.45,
-    spiceLevel: 0,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 100,
-    ratingCount: 7
-  },
-  {
-    id: 'ST10',
-    name: 'MANCHURIAN - PANNER',
-    description: 'Paneer manchurian',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 100,
-    ratingCount: 8
-  },
-  {
-    id: 'ST11',
-    name: '65-PANNER',
-    description: 'Paneer 65',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS'
-  },
-  {
-    id: 'ST12',
-    name: 'CHILLI - BABY CORN',
-    description: 'Indo-Chinese style chilli baby corn',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS'
-  },
-  {
-    id: 'ST13',
-    name: '65-BABY CORN',
-    description: 'Baby corn 65',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS',
-    rating: 100,
-    ratingCount: 5
-  },
-  {
-    id: 'ST14',
-    name: '65- GOBI',
-    description: 'Cauliflower 65',
-    price: 18.95,
-    spiceLevel: 2,
-    isVegetarian: true,
-    category: 'south',
-    foodCategory: 'STARTERS'
-  },
-  {
-    id: 'ST15',
-    name: 'EXTRA EGG',
-    description: 'Additional egg',
-    price: 1.95,
-    spiceLevel: 0,
-    isVegetarian: false,
-    category: 'south',
-    foodCategory: 'STARTERS'
-  },
+    category: 'riverstone',
+    foodCategory: 'DESSERT'
+  }
 ];
