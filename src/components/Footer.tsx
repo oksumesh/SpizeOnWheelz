@@ -80,7 +80,8 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            Built by <span> </span>
+            <span className={isAboutPage ? "text-gray-700" : "text-white/90"}>Built by</span>
+            <span> </span>
             <a href="https://quantumsoftwares.co/" className="wave-text font-medium">
               Quantum Softwares
             </a>

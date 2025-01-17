@@ -22,7 +22,7 @@ function App() {
               <Route path="/menu/schofields" element={<SchofieldsMenu />} />
             </Routes>
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </CartProvider>
     </BrowserRouter>
