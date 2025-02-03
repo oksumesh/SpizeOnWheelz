@@ -76,8 +76,6 @@ export default function RiverstoneMenu() {
     }
   };
 
-  console.log('Rendering RiverstoneMenu CartPopup');
-
   return (
     <div className="pt-16">
       <div className="relative h-[300px] bg-cover bg-center" style={{

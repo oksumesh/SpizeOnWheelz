@@ -77,8 +77,6 @@ export default function SchofieldsMenu() {
     }
   };
 
-  console.log('Rendering SchofieldsMenu CartPopup');
-
   return (
     <div className="pt-16">
       <div className="relative h-[300px] bg-cover bg-center" style={{
