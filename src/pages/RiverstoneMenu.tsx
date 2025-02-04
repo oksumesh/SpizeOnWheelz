@@ -14,16 +14,20 @@ export default function RiverstoneMenu() {
   const navRef = useRef<HTMLDivElement>(null);
   const { addToCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const isManualScrollRef = useRef(false);
   
   const categories = ['STARTERS', 'SNACKS', 'NAAN', 'SIDES', 'IDLY', 'CHAT', 'DOSA', 'ROLLS', 'KULCHAS', 'CURRIES', 'BIRYANI', 'DRINKS', 'DESSERT'];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isManualScrollRef.current) return;
+
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveCategory(entry.target.id);
-            // Scroll the navigation bar to show the active category
             const navButton = document.querySelector(`button[data-category="${entry.target.id}"]`);
             navButton?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
           }
@@ -45,7 +49,18 @@ export default function RiverstoneMenu() {
   }, []);
 
   const scrollToCategory = (category: string) => {
-    categoryRefs.current[category]?.scrollIntoView({ behavior: 'smooth' });
+    isManualScrollRef.current = true;
+    
+    setActiveCategory(category);
+    
+    categoryRefs.current[category]?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    setTimeout(() => {
+      isManualScrollRef.current = false;
+    }, 1000);
   };
 
   const getFilteredItems = (category: string) => {
@@ -138,7 +153,7 @@ export default function RiverstoneMenu() {
                   key={category}
                   id={category}
                   ref={el => categoryRefs.current[category] = el}
-                  className="scroll-mt-20"
+                  className="scroll-mt-[300px]"
                 >
                   <h2 className="text-2xl font-bold text-white mb-6">{category}</h2>
                   {categoryItems.length === 0 ? (

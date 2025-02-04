@@ -13,16 +13,21 @@ export default function SchofieldsMenu() {
   const navRef = useRef<HTMLDivElement>(null);
   const { addToCart, removeFromCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const isManualScrollRef = useRef(false);
   
   const categories = ['BIRYANI', 'DOSA', 'DRINKS', 'CHAT', 'DESSERT', 'NOODLES', 'RICE', 'TIFFINS', 'STARTERS'];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        // Only handle intersection if it's not a manual scroll
+        if (isManualScrollRef.current) return;
+
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveCategory(entry.target.id);
-            // Scroll the navigation bar to show the active category
             const navButton = document.querySelector(`button[data-category="${entry.target.id}"]`);
             navButton?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
           }
@@ -44,7 +49,22 @@ export default function SchofieldsMenu() {
   }, []);
 
   const scrollToCategory = (category: string) => {
-    categoryRefs.current[category]?.scrollIntoView({ behavior: 'smooth' });
+    // Set manual scroll flag
+    isManualScrollRef.current = true;
+    
+    // Update active category
+    setActiveCategory(category);
+    
+    // Perform scroll
+    categoryRefs.current[category]?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    // Reset manual scroll flag after animation completes
+    setTimeout(() => {
+      isManualScrollRef.current = false;
+    }, 1000);
   };
 
   // Add this function to filter items based on search
@@ -140,7 +160,7 @@ export default function SchofieldsMenu() {
                   key={category}
                   id={category}
                   ref={el => categoryRefs.current[category] = el}
-                  className="scroll-mt-20"
+                  className="scroll-mt-[300px]"
                 >
                   <h2 className="text-2xl font-bold text-white mb-6">{category}</h2>
                   {categoryItems.length === 0 ? (
