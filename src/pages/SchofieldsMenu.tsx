@@ -130,7 +130,14 @@ export default function SchofieldsMenu() {
               className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-indigo-500"
             />
 
-            <nav className="flex space-x-8 overflow-x-auto border-b border-gray-700" ref={navRef}>
+            <nav 
+              className="flex space-x-8 overflow-x-auto border-b border-gray-700 scrollbar-hide" 
+              ref={navRef}
+              style={{
+                msOverflowStyle: 'none',  /* IE and Edge */
+                scrollbarWidth: 'none',   /* Firefox */
+              }}
+            >
               {categories.map((category) => (
                 <button
                   key={category}
@@ -146,6 +153,11 @@ export default function SchofieldsMenu() {
                 </button>
               ))}
             </nav>
+            <style jsx>{`
+              nav::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
           </div>
 
           <div className="space-y-16 mt-8">
