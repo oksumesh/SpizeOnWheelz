@@ -123,7 +123,7 @@ export default function About() {
         </div>
 
         {/* Social Icons */}
-        <div className="flex justify-center space-x-6">
+        {/* <div className="flex justify-center space-x-6">
           <a 
             href="https://www.instagram.com/spiceonwheelz/" 
             className="text-[#E4405F] hover:opacity-80 transition-opacity"
@@ -142,7 +142,7 @@ export default function About() {
           >
             <Twitter className="h-8 w-8" />
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

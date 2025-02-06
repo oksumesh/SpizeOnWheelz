@@ -14,28 +14,32 @@ export default function RiverstoneMenu() {
   const navRef = useRef<HTMLDivElement>(null);
   const { addToCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
   const isManualScrollRef = useRef(false);
   
-  const categories = ['STARTERS', 'SNACKS', 'NAAN', 'SIDES', 'IDLY', 'CHAT', 'DOSA', 'ROLLS', 'KULCHAS', 'CURRIES', 'BIRYANI', 'DRINKS', 'DESSERT'];
+  const categories = ['STARTERS', 'SNACKS', 'NAAN', 'SIDES', 'IDLY', 'CHAT', 'DOSA', 'ROLLS', 'KULCHAS', 'CURRIES', 'BIRYANI', 'DESSERT','DRINKS' ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (isManualScrollRef.current) return;
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveCategory(entry.target.id);
-            const navButton = document.querySelector(`button[data-category="${entry.target.id}"]`);
-            navButton?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
-        });
+        // Find the most visible section
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        
+        if (visibleEntries.length > 0) {
+          // Sort by visibility ratio and get the most visible
+          const mostVisible = visibleEntries.reduce((prev, current) => {
+            return (current.intersectionRatio > prev.intersectionRatio) ? current : prev;
+          });
+
+          setActiveCategory(mostVisible.target.id);
+          const navButton = document.querySelector(`button[data-category="${mostVisible.target.id}"]`);
+          navButton?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
       },
       {
-        rootMargin: '-20% 0px -80% 0px',
-        threshold: 0
+        rootMargin: '-50% 0px -50% 0px',  // Center 50% of viewport
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]  // More granular thresholds
       }
     );
 
@@ -1083,6 +1087,20 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     foodCategory: 'BIRYANI'
   },
 
+
+  // DESSERT
+  {
+    id: 'DE1',
+    name: 'GULAB JAMUN',
+    description: 'Three pieces.',
+    price: 5.95,
+    spiceLevel: 0,
+    isVegetarian: true,
+    category: 'riverstone',
+    foodCategory: 'DESSERT'
+  },
+
+
   // DRINKS
   {
     id: 'DR1',
@@ -1135,15 +1153,4 @@ const MENU_ITEMS: (MenuItem & { rating?: number, ratingCount?: number })[] = [
     foodCategory: 'DRINKS'
   },
 
-  // DESSERT
-  {
-    id: 'DE1',
-    name: 'GULAB JAMUN',
-    description: 'Three pieces.',
-    price: 5.95,
-    spiceLevel: 0,
-    isVegetarian: true,
-    category: 'riverstone',
-    foodCategory: 'DESSERT'
-  }
 ];

@@ -11,10 +11,8 @@ export default function SchofieldsMenu() {
   const [searchQuery, setSearchQuery] = useState('');
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const navRef = useRef<HTMLDivElement>(null);
-  const { addToCart, removeFromCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
+  const { addToCart, isItemInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
   const isManualScrollRef = useRef(false);
   
   const categories = ['BIRYANI', 'DOSA', 'DRINKS', 'CHAT', 'DESSERT', 'NOODLES', 'RICE', 'TIFFINS', 'STARTERS'];
@@ -22,20 +20,25 @@ export default function SchofieldsMenu() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        // Only handle intersection if it's not a manual scroll
         if (isManualScrollRef.current) return;
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveCategory(entry.target.id);
-            const navButton = document.querySelector(`button[data-category="${entry.target.id}"]`);
-            navButton?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
-        });
+        // Find the most visible section
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        
+        if (visibleEntries.length > 0) {
+          // Sort by visibility ratio and get the most visible
+          const mostVisible = visibleEntries.reduce((prev, current) => {
+            return (current.intersectionRatio > prev.intersectionRatio) ? current : prev;
+          });
+
+          setActiveCategory(mostVisible.target.id);
+          const navButton = document.querySelector(`button[data-category="${mostVisible.target.id}"]`);
+          navButton?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
       },
       {
-        rootMargin: '-20% 0px -80% 0px',
-        threshold: 0
+        rootMargin: '-50% 0px -50% 0px',  // Center 50% of viewport
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]  // More granular thresholds
       }
     );
 
@@ -98,7 +101,7 @@ export default function SchofieldsMenu() {
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 flex flex-col min-h-screen">
       <div className="relative h-[300px] bg-cover bg-center" style={{
         backgroundImage: `url(${SchofieldsHome})`
       }}>
@@ -111,7 +114,7 @@ export default function SchofieldsMenu() {
         </div>
       </div>
       
-      <div className="bg-neutral-900 min-h-screen">
+      <div className="bg-neutral-900 flex-grow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="sticky top-16 bg-neutral-900 z-50 space-y-8 pb-4">
             <Link 
