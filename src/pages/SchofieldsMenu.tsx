@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { MenuItem } from '../types/menu';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, DownloadIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import CartPopup from '../components/CartPopup';
 import SchofieldsHome from '../assets/SchofieldsHome.png';
+import SchofieldsMenuImg from '../assets/SchofieldMenu.png';
 
 export default function SchofieldsMenu() {
   const [activeCategory, setActiveCategory] = useState('BIRYANI');
@@ -100,6 +101,17 @@ export default function SchofieldsMenu() {
     }
   };
 
+  const handleDownloadMenu = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent navigation when clicking download
+    const menuUrl = SchofieldsMenuImg;
+    const link = document.createElement('a');
+    link.href = menuUrl;
+    link.download = `Schofields-menu.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="pt-16 flex flex-col min-h-screen">
       <div className="relative h-[300px] bg-cover bg-center" style={{
@@ -111,6 +123,12 @@ export default function SchofieldsMenu() {
           <p className="text-xl max-w-2xl text-center">
             Discover the authentic tastes of Schofields
           </p>
+          <button
+              onClick={handleDownloadMenu}
+              className="mt-6 px-6 py-2 border border-white/50 relative bg-gradient-to-r from-rose-300/30 via-purple-300/30 to-indigo-300/30 bg-[length:200%_100%] animate-gradient backdrop-blur-sm rounded-[10px] text-white text-base md:text-lg uppercase tracking-wider transition-all duration-300 w-fit hover:scale-105 flex items-center"
+            >
+              Download Menu <DownloadIcon className="w-6 h-6 ml-2" />
+            </button>
         </div>
       </div>
       

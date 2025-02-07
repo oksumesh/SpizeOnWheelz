@@ -7,7 +7,7 @@ export default function Footer() {
   const isAboutPage = location.pathname === '/about';
 
   return (
-    <footer className="bg-gradient-to-t from-black/50 to-transparent py-4 fixed inset-x-0 bottom-0 backdrop-blur-sm">
+    <footer className="bg-[#1a1a1a] border-t border-gray-800 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile Layout */}
         <div className="sm:hidden">
@@ -20,7 +20,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/spiceonwheelz" className="text-[#1877F2] hover:opacity-80">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="https://x.com/spiceonwheelz" className={isAboutPage ? "text-gray-700 hover:opacity-80" : "text-white hover:opacity-80"}>
+              <a href="https://x.com/spiceonwheelz" className="text-white hover:opacity-80">
                 <Twitter className="h-4 w-4" />
               </a>
               <a href="https://chat.whatsapp.com/E2s91PUtjwFKPF1I73WsK2" className="text-[#25D366] hover:opacity-80">
@@ -34,7 +34,7 @@ export default function Footer() {
                 href="https://quantumsoftwares.co/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className={`text-xs ${isAboutPage ? 'text-gray-700' : 'text-gray-400'} hover:text-gray-300`}
+                className="text-xs text-gray-400 hover:text-gray-300"
               >
                 Built by Quantum Softwares
               </a>
@@ -52,7 +52,7 @@ export default function Footer() {
             <a href="https://www.facebook.com/spiceonwheelz" className="text-[#1877F2] hover:opacity-80">
               <Facebook className="h-5 w-5" />
             </a>
-            <a href="https://x.com/spiceonwheelz" className={isAboutPage ? "text-gray-700 hover:opacity-80" : "text-white hover:opacity-80"}>
+            <a href="https://x.com/spiceonwheelz" className="text-white hover:opacity-80">
               <Twitter className="h-5 w-5" />
             </a>
             <a href="https://chat.whatsapp.com/E2s91PUtjwFKPF1I73WsK2" className="text-[#25D366] hover:opacity-80">
@@ -65,7 +65,7 @@ export default function Footer() {
             href="https://quantumsoftwares.co/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className={`text-sm ${isAboutPage ? 'text-gray-700' : 'text-gray-400'} hover:text-gray-300`}
+            className="text-sm text-gray-400 hover:text-gray-300"
           >
             Built by Quantum Softwares
           </a>

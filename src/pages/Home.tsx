@@ -50,7 +50,7 @@ export default function Home() {
         <div className="flex-1 h-[50vh] md:h-full">
         <CuisineSection
             title="Riverstone Delicacies"
-            description="Experience the rich, aromatic flavors of Riverstone"
+            description="Experience the aromatic flavors of Riverstone"
             backgroundImage={RiverstoneHome}
             items={riverstoneItems}
             type="riverstone"
