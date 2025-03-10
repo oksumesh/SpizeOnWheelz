@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
+import { X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useLocation } from 'react-router-dom';
 
@@ -72,52 +72,6 @@ export default function CartPopup({ isOpen, onClose }: CartPopupProps) {
 
   const handleNext = () => {
     setStep('details');
-  };
-
-  const handleWhatsAppOrder = () => {
-    const currentLocation = getCurrentLocation();
-    const phoneNumber = PHONE_NUMBERS[currentLocation];
-    const fullCustomerPhone = `04${customerDetails.phone}`;
-    
-    const orderDetails = 
-`🛍️ *New Order*
-------------------
-👤 *Customer Details*
-Name: ${customerDetails.name}
-Phone: +61 ${fullCustomerPhone}
-Pickup Date: ${formatDate(customerDetails.pickupDate)}
-Pickup Time: ${formatTime(customerDetails.pickupTime)}
-
-🍽️ *Order Items*
-${items.map(item => (
-  `• ${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`
-)).join('\n')}
-
-💰 *Total Amount: $${total.toFixed(2)}*
-------------------`;
-
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=61${phoneNumber}&text=${encodeURIComponent(orderDetails)}`;
-    window.open(whatsappUrl, '_blank');
-    resetForm();
-  };
-
-  const handleTextOrder = () => {
-    const currentLocation = getCurrentLocation();
-    const phoneNumber = `0${PHONE_NUMBERS[currentLocation]}`;
-    const fullCustomerPhone = `04${customerDetails.phone}`;
-    
-    const orderDetails = 
-`New Order:
-Customer: ${customerDetails.name}
-Phone: +61 ${fullCustomerPhone}
-Pickup: ${formatDate(customerDetails.pickupDate)} at ${formatTime(customerDetails.pickupTime)}
-Items:
-${items.map(item => `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`).join('\n')}
-Total: $${total.toFixed(2)}`;
-
-    const smsUrl = `sms:${phoneNumber}?body=${encodeURIComponent(orderDetails)}`;
-    window.location.href = smsUrl;
-    resetForm();
   };
 
   const resetForm = () => {
