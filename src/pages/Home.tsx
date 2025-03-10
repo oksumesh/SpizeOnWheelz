@@ -1,4 +1,3 @@
-import React from 'react';
 import CuisineSection from '../components/CuisineSection';
 import { MenuItem } from '../types/menu';
 import RiverstoneHome from '../assets/RiverstoneHome.png'

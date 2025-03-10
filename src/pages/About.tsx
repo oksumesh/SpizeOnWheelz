@@ -1,5 +1,4 @@
-import React from 'react';
-import { MapPin, Clock, Phone, Mail, Instagram, Facebook, Twitter } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail } from 'lucide-react';
 
 export default function About() {
   return (
