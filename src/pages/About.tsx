@@ -15,16 +15,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Contact Info Row */}
         <div className="flex flex-col md:flex-row justify-between gap-8 mb-12">
-          <div className="flex items-center space-x-4">
-            <Clock className="h-6 w-6 text-indigo-600" />
-            <div>
-              <h3 className="font-bold">Hours</h3>
-              <p className="text-gray-600">
-                Monday: Closed<br />
-                Tuesday-Sunday: 12:00 PM - 10:00 PM
-              </p>
-            </div>
-          </div>
+          
 
           <div className="flex items-center space-x-4">
             <Phone className="h-6 w-6 text-indigo-600" />
@@ -42,6 +33,17 @@ export default function About() {
                   </a>
                 </p>
               </div>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <Clock className="h-6 w-6 text-indigo-600" />
+            <div>
+              <h3 className="font-bold">Hours</h3>
+              <p className="text-gray-600">
+                Monday: 05:00 PM - 10:00 PM<br />
+                Tuesday-Sunday: 12:00 PM - 10:00 PM
+              </p>
             </div>
           </div>
 
